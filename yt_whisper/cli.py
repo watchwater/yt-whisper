@@ -50,13 +50,13 @@ def main():
         warnings.filterwarnings("default")
 
         if (subtitles_format == 'vtt'):
-            vtt_path = os.path.join(output_dir, f"{slugify(title)}.vtt")
+            vtt_path = os.path.join(output_dir, f"middle.vtt")
             with open(vtt_path, 'w', encoding="utf-8") as vtt:
                 write_vtt(result["segments"], file=vtt, line_length=break_lines)
 
             print("Saved VTT to", os.path.abspath(vtt_path))
         else:
-            srt_path = os.path.join(output_dir, f"{slugify(title)}.srt")
+            srt_path = os.path.join(output_dir, f"middle.srt")
             with open(srt_path, 'w', encoding="utf-8") as srt:
                 write_srt(result["segments"], file=srt, line_length=break_lines)
 
